@@ -26,17 +26,46 @@
     <section class="description">
         <h2>About Serene living</h2>
         <div class="sereneliving-description" id="sereneliving-description"></div>
+
+        <!-- highlights section within description -->
+        <div class="highlights-content">
+            <div class="highlight">
+                <img src="assets/images/icons/safe-space-icon.png" alt="Safe space icon">
+                <h3>Safe space for Women</h3>
+                <p>we are dedicated to providing a safe and welcoming enviornment for women.</p>
+            </div>
+            <div class="highlight">
+                <img src="assets/images/icons/attractions-icon.png" alt="Nearby attractions icon">
+                <h3>Nearby attractions</h3>
+                <p>Explore popular attractions and activities close by, perfect for all visitors</p>
+            </div>
+            <div class="highlight">
+                <img src="assets/images/icons/pet-friendly-icon.png" alt="Pet friendly icon">
+                <h3>Pet friendly</h3>
+                <p>The place is completely pet-friendly and there are multiple pet friendly doctors nearby to care for your furry friends</p>
+            </div>
+            <div class="highlight">
+                <img src="assets/images/icons/restaurant-icon.png" alt="Restaurants icon">
+                <h3>Restaurants within walking distance</h3>
+                <p>Enjoy a variety of dining options, all within easy walking distance from the place.</p>
+            </div>
+            <div class="highlight">
+                <img src="assets/images/icons/lgbtq-friendly-icon.png" alt="LGBTQ Friendly icon">
+                <h3>LGBTQ+ Community Friendly</h3>
+                <p>A warm and inclusive enviornment for everyone, welcoming all backgrounds.</p>
+            </div>
+        </div>
     </section>
 
     <!-- properties section -->
     <section id="properties" class="property-section">
         <h1>Our properties</h1>
-        <div class="container">
+        <div class="property-card-container">
 
             <!-- Studio apartment -->
             <div class="property-card">
                 <h2>Studio apartment</h2>
-                <div class="studio-description" id="studio-description"></div>
+                <div class="property-description" id="studio-description"></div>
                 <!-- slider for studio apartment -->
                 <div class="slider" id="studio-slider">
                     <img src="assets/images/gallery/studio/studio-apartment-02.jpg" alt="Studio apartment image 1" class="slide">
@@ -56,7 +85,7 @@
             <!-- 3BHK apartment -->
             <div class="property-card">
                 <h2>3BHK apartment</h2> 
-                <div class="bhk3-description" id="bhk3-description"></div>
+                <div class="property-description" id="bhk3-description"></div>
                 <!-- slider for 3BHK apartment images -->
                 <div class="slider" id="bhk3-slider">
                     <img src="assets/images/gallery/studio/studio-apartment-02.jpg" alt="3BHK apartment image 1" class="slide">
@@ -70,6 +99,46 @@
                 <div class="property-amenities">
                     <h3>Amenities</h3>
                     <ul id="bhk3-amenities"></ul>
+                </div>
+            </div>
+
+            <!-- 2BHK apartment -->
+            <div class="property-card">
+                <h2>2BHK apartment</h2>
+                <div class="property-description" id="bhk2-description"></div>
+                <!-- slider for 2BHK apartment images -->
+                <div class="slider" id="bhk2-slider">
+                    <img src="assets/images/gallery/studio/studio-apartment-02.jpg" alt="2BHK apartment image 1" class="slide">
+                    <img src="assets/images/gallery/studio/studio-apartment-01.jpg" alt="2BHK apartment image 2" class="slide">
+                    <img src="assets/images/gallery/studio/studio-apartment-03.jpg" alt="2BHK apartment image 3" class="slide">
+                    <!-- navigation buttons -->
+                    <button class="slider-btn prev" onclick="changeSlide(-1, 'bhk2-slider')">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeSlide(1, 'bhk2-slider')">&#10095;</button>
+                </div>
+                <!-- 2BHK amenities -->
+                <div class="property-amenities">
+                    <h3>Amenities</h3>
+                    <ul id="bhk2-amenities"></ul>
+                </div>
+            </div>
+
+            <!-- 1BHK apartment -->
+            <div class="property-card">
+                <h2>1BHK apartment</h2>
+                <div class="property-description" id="bhk1-description"></div>
+                <!-- slider for 1BHK apartment images -->
+                <div class="slider" id="bhk1-slider">
+                    <img src="assets/images/gallery/studio/studio-apartment-02.jpg" alt="1BHK apartment image 1" class="slide">
+                    <img src="assets/images/gallery/studio/studio-apartment-01.jpg" alt="1BHK apartment iamge 2" class="slide">
+                    <img src="assets/images/gallery/studio/studio-apartment-03.jpg" alt="1BHK apartment image 3" class="slide">
+                    <!-- navigation buttons -->
+                    <button class="slider-btn prev" onclick="changeSlide(-1, 'bhk1-slider')">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeSlide(1, 'bhk1-slider')">&#10095;</button>
+                </div>
+                <!-- 1BHK amenities -->
+                <div class="property-amenities">
+                    <h3>Amenities</h3>
+                    <ul id="bhk1-amenities"></ul>
                 </div>
             </div>
         </div>

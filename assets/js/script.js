@@ -1,18 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
     showSlide('studio-slider');
     showSlide('bhk3-slider');
+    showSlide('bhk2-slider');
+    showSlide('bhk1-slider');
 
     showDescription('sereneliving-description', 'assets/descriptions/sereneliving.txt');
     showDescription('studio-description', 'assets/descriptions/studio.txt');
     showDescription('bhk3-description', 'assets/descriptions/3bhk.txt');
+    showDescription('bhk2-description', 'assets/descriptions/2bhk.txt');
+    showDescription('bhk1-description', 'assets/descriptions/1bhk.txt');
 
     showAmenities('studio-amenities', 'assets/amenities/studio.txt');
     showAmenities('bhk3-amenities', 'assets/amenities/3bhk.txt');
+    showAmenities('bhk2-amenities', 'assets/amenities/2bhk.txt');
+    showAmenities('bhk1-amenities', 'assets/amenities/1bhk.txt');
 });
 
 
 
-let slideIndex = {'studio-slider': 0, 'bhk3-slider': 0};
+let slideIndex = {'studio-slider': 0, 'bhk3-slider': 0, 'bhk2-slider': 0, 'bhk1-slider': 0};
 let descriptionPaths = {'sereneliving-description': '../descriptions/sereneliving.txt'};
 
 function showSlide(sliderId){

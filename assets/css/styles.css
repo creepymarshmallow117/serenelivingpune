@@ -83,7 +83,7 @@ header .container {
 /* description styling */
 .description {
     padding: 60px 20px;
-    background-color: #f8f9fa;
+    background-color: #f9f9f9;
     text-align: center;
 }
 
@@ -91,13 +91,12 @@ header .container {
     font-size: 2rem;
     color: #333;
     margin-bottom: 15px;
-    font-weight: bold;
 }
 
 .sereneliving-description {
     max-width: 800px;
-    margin: 0 auto;
-    color: #555;
+    margin: 0 auto 40px;
+    color: #666;
     font-size: 1.1.rem;
     line-height: 1.6;
     padding: 20px;
@@ -116,6 +115,33 @@ header .container {
     border-radius: 2px;
 }
 
+.highlights-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.highlight {
+    max-width: 200px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.highlight img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.highlight h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.4;
+}
 
 /* property section styling */
 .property-section {
@@ -123,19 +149,40 @@ header .container {
     background-color: #fff;
 }
 
+.property-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
 .property-card {
     background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 15px;
+    max-width: 600px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease;
     padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .property-card:hover {
     transform: scale(1.02);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.property-card h2 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.property-description {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0 0 15px;
+    line-height: 1.4;
 }
 
 /* image slider styling */
@@ -273,6 +320,15 @@ header, footer {
     .sereneliving-description {
         font-size: 1rem;
         padding: 15px;
+    }
+
+    .highlights-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .highlight {
+        max-width: 100%;
     }
 
     .slider-btn {
