@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serene living</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- header content -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Serene living</h1>
+        </div>
+    </header>
+
+    <!-- hero section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to your home away from home</h2>
+            <a href="#properties" class="hero-btn">explore options</a>
+        </div>
+    </section>
+
+    <!-- serene living description section -->
+    <section class="description">
+        <h2>About Serene living</h2>
+        <div class="sereneliving-description" id="sereneliving-description"></div>
+    </section>
+
+    <!-- properties section -->
+    <section id="properties" class="property-section">
+        <h1>Our properties</h1>
+        <div class="container">
+
+            <!-- Studio apartment -->
+            <div class="property-card">
+                <h2>Studio apartment</h2>
+                <div class="studio-description" id="studio-description"></div>
+                <!-- slider for studio apartment -->
+                <div class="slider" id="studio-slider">
+                    <img src="assets/images/gallery/studio/studio-apartment-02.jpg" alt="Studio apartment image 1" class="slide">
+                    <img src="assets/images/gallery/studio/studio-apartment-01.jpg" alt="Studio apartment image 2" class="slide">
+                    <img src="assets/images/gallery/studio/studio-apartment-03.jpg" alt="Studio apartment iamge 3" class="slide">
+                    <!-- navigation buttons -->
+                    <button class="slider-btn prev" onclick="changeSlide(-1, 'studio-slider')">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeSlide(1, 'studio-slider')">&#10095;</button>
+                </div>
+                <!-- studio amenities -->
+                <div class="property-amenities">
+                    <h3>Amenities</h3>
+                    <ul id="studio-amenities"></ul>
+                </div>
+            </div>
+
+            <!-- 3BHK apartment -->
+            <div class="property-card">
+                <h2>3BHK apartment</h2> 
+                <div class="bhk3-description" id="bhk3-description"></div>
+                <!-- slider for 3BHK apartment images -->
+                <div class="slider" id="bhk3-slider">
+                    <img src="assets/images/gallery/studio/studio-apartment-02.jpg" alt="3BHK apartment image 1" class="slide">
+                    <img src="assets/images/gallery/studio/studio-apartment-01.jpg" alt="3BHK apartment image 2" class="slide">
+                    <img src="assets/images/gallery/studio/studio-apartment-03.jpg" alt="3BHK apartment image 3" class="slide">
+                    <!-- navigation buttons -->
+                    <button class="slider-btn prev" onclick="changeSlide(-1, 'bhk3-slider')">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeSlide(1, 'bhk3-slider')">&#10095;</button>
+                </div>
+                <!-- 3bhk amenities -->
+                <div class="property-amenities">
+                    <h3>Amenities</h3>
+                    <ul id="bhk3-amenities"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location section -->
+    <section id="location">
+        <div class="container">
+            <h2>Location</h2>
+            <p>Discover nearby attractions</p>
+            <div class="map-container">
+                <!-- Google maps iframe embed -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16934.786040539308!2d73.88967682549603!3d18.477276073455673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2ebeef681de83%3A0x77733bf62a7f9e54!2sSerene%20Living!5e0!3m2!1sen!2sin!4v1730481593508!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" >
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- footer content -->
+    </footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
