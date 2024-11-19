@@ -10,15 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
     showDescription('bhk2-description', 'assets/descriptions/2bhk.txt');
     showDescription('bhk1-description', 'assets/descriptions/1bhk.txt');
 
-    showAmenities('studio-amenities', 'assets/amenities/studio.txt');
-    showAmenities('bhk3-amenities', 'assets/amenities/3bhk.txt');
-    showAmenities('bhk2-amenities', 'assets/amenities/2bhk.txt');
-    showAmenities('bhk1-amenities', 'assets/amenities/1bhk.txt');
+    if(document.getElementById('index-studio-amenities') || document.getElementById('index-bhk3-amenities') || document.getElementById('index-bhk2-amenities') || document.getElementById('index-bhk1-amenities') ){
+        console.log('called in index page');
+        showAmenities('index-studio-amenities', 'assets/amenities/studio.txt');
+        showAmenities('index-bhk3-amenities', 'assets/amenities/3bhk.txt');
+        showAmenities('index-bhk2-amenities', 'assets/amenities/2bhk.txt');
+        showAmenities('index-bhk1-amenities', 'assets/amenities/1bhk.txt');
+    }
 });
 
 
 
-let slideIndex = {'studio-slider': 0, 'bhk3-slider': 0, 'bhk2-slider': 0, 'bhk1-slider': 0};
+let slideIndex = {
+    'studio-slider': 0, 
+    'bhk3-slider': 0, 
+    'bhk2-slider': 0, 
+    'bhk1-slider': 0, 
+    'studio-living-room-slider': 0, 
+    'studio-bath-room-slider': 0};
 let descriptionPaths = {'sereneliving-description': '../descriptions/sereneliving.txt'};
 
 function showSlide(sliderId){
@@ -58,6 +67,8 @@ function showDescription(elementId, filePath){
 
 // Show amenities
 function showAmenities(elementId, filePath){
+    console.log('fetching files from: ${filePath}');
+
     fetch(filePath)
     .then(response => {
         if (!response.ok) throw new Error("Network response not ok");

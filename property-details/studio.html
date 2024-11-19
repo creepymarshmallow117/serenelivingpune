@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio details</title>
+    <link rel="stylesheet" href="../assets/css/property-details-styles.css">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Serene living</h1>
+        </div>
+    </header>
+
+    <!-- property details section -->
+    <section class="property-details">
+        <p>This cozy studio is perfect for solo travelers or couples looking for a peaceful getaway</p>
+    </section>
+
+    <!-- content container for amenities and sliders -->
+    <div class="content-container">
+
+        <!-- amenities section -->
+        <div class="amenities-section">
+            <h3>Amenities</h3>
+            <ul class="amenities-list" id="details-studio-amenities"></ul>
+        </div>
+
+        <!-- sliders section -->
+        <div class="sliders-section">
+            <div class="room-slider-card">
+                <h3>Living room</h3>
+                <div class="slider" id="studio-living-room-slider">
+                    <img src="../assets/images/gallery/studio/studio-living-01.jpg" alt="Living room image 1" class="slide">
+                    <img src="../assets/images/gallery/studio/studio-living-02.jpg" alt="Living room image 2" class="slide">
+                    <img src="../assets/images/gallery/studio/studio-living-03.jpg" alt="Living room image 3" class="slide">
+                    <img src="../assets/images/gallery/studio/studio-living-04.jpg" alt="Living room image 4" class="slide">
+                    <button class="slider-btn prev" onclick="changeSlide(-1, 'studio-living-room-slider')">&#10094;</button>
+                    <button class="slider-btn next" onclick="changeSlide(1, 'studio-living-room-slider')">&#10095;</button>
+                </div>
+                
+                <div class="room-slider-card">
+                    <h3>Bathroom</h3>
+                    <div class="slider" id="studio-bath-room-slider">
+                        <img src="../assets/images/gallery/studio/studio-bathroom-01.jpg" alt="Bathroom image 1" class="slide">
+                        <img src="../assets/images/gallery/studio/studio-bathroom-02.jpg" alt="Bathroom image 2" class="slide">
+                        <button class="slider-btn prev" onclick="changeSlide(-1, 'studio-bath-room-slider')">&#10094;</button>
+                        <button class="slider-btn next" onclick="changeSlide(1, 'studio-bath-room-slider')">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+
+    </footer>
+    <!-- Include Javascript for the sliders -->
+    <script src="propertyDetailsScript.js" defer></script>
+</body>
+</html>

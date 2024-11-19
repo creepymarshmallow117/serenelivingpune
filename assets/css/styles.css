@@ -200,7 +200,7 @@ header .container {
 
 /* property section styling */
 .property-section {
-    padding: 60px 20px;
+    padding: 20px 20px;
     background-color: #fff;
 }
 
@@ -209,11 +209,11 @@ header .container {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    padding: 20px;
+    padding: 0px;
 }
 
 .property-card {
-    background-color: #fff;
+    background-color: #f1faee;
     max-width: 600px;
     margin: 10px;
     border-radius: 8px;
@@ -251,6 +251,7 @@ header .container {
     border-radius: 10px;
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 .slider .slide:first-child {
@@ -296,7 +297,7 @@ header .container {
 .amenities-list {
     list-style: none;
     padding: 0;
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 .amenities-list li {
@@ -316,16 +317,36 @@ header .container {
 }
 
 .amenity-icon {
-    width: 24px;
-    height: 24px;
+    width: 15px;
+    height: 15px;
     margin-right: 12px;
     vertical-align: middle;
+}
+
+.property-actions {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.view-details-btn {
+    background-color: #87a9a5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.view-details-btn:hover {
+    background-color: #70928e
 }
 
 /* Basic styling */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #faf3e0;
+    background-color: #f1faee;
     color: #333;
     margin: 0;
     padding: 0;
