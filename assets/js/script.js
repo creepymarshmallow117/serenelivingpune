@@ -77,7 +77,8 @@ function showAmenities(elementId, filePath){
     .then(text => {
         const amenitiesList = document.getElementById(elementId);
         const amenities = text.split("\n");
-        amenities.forEach(amenity => {
+
+        amenities.slice(0, 5).forEach(amenity => {
             const [name, iconName] = amenity.split(',').map(item => item.trim());
 
             if(name && iconName){

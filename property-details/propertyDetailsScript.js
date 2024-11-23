@@ -28,6 +28,23 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('bhk3-amenities loaded');
         showAmenities('details-bhk3-amenities', '../assets/amenities/3bhk.txt');
     }
+
+    if(document.getElementById('bhk3-reviews-list')){
+        console.log('bhk3-reviews-loaded');
+        loadReviews('bhk3-reviews-list', '../assets/reviews/bhk3.json');
+    }
+    else if(document.getElementById('bhk2-reviews-list')){
+        console.log('bhk2-reviews-loaded');
+        loadReviews('bhk2-reviews-list', '../assets/reviews/bhk2.json');
+    }
+    else if(document.getElementById('bhk1-reviews-list')){
+        console.log('bhk1-reviews-loaded');
+        loadReviews('bhk1-reviews-list', '../assets/reviews/bhk1.json');
+    }
+    // else if(document.getElementById('studio-reviews-list')){
+    //     console.log('studio reviews loaded');
+    //     loadReviews('studio-reviews-list', '../assets/reviews/studio.json');
+    // }
 });
 
 let slideIndex = {
@@ -73,34 +90,49 @@ function changeSlide(n, sliderId){
     showSlide(sliderId);
 }
 
-// Show amenities
-function showAmenities(elementId, filePath){
-    console.log('fetching files from: ${filePath}');
+function toggleAmenities(elementId) {
+    const amenitiesList = document.getElementById(elementId);
+    const items = amenitiesList.querySelectorAll('li');
+    const button = amenitiesList.nextElementSibling;
 
+    if(!amenitiesList.dataset.expanded || amenitiesList.dataset.expanded === "false"){
+        // Show all amenities
+        items.forEach(item => item.style.display = "flex");
+        button.textContent = "View less amenities";
+        amenitiesList.dataset.expanded = "true";
+    }else {
+        // Show limited amenities
+        items.forEach((item, index) => {
+            item.style.display = index < 5 ? "flex" : "none";
+        });
+        button.textContent = "View all amenities";
+        amenitiesList.dataset.expanded = "false";
+    }
+}
+
+function showAmenities(elementId, filePath){
     fetch(filePath)
     .then(response => {
-        if (!response.ok) throw new Error("Network response not ok");
+        if(!response.ok) throw new Error("Network response not ok");
         return response.text();
     })
-    .then(text => {
+    .then(text =>{
         const amenitiesList = document.getElementById(elementId);
         const amenities = text.split("\n");
-        amenities.forEach(amenity => {
+        amenities.forEach((amenity, index) => {
             const [name, iconName] = amenity.split(',').map(item => item.trim());
 
-            if(name && iconName){
+            if (name && iconName) {
                 const listItem = document.createElement('li');
+                listItem.style.display = index < 5 ? "flex" : "none";
 
-                // Create an image for the icon
                 const icon = document.createElement('img');
-                icon.src = '../assets/images/icons/' + iconName + ".png";
+                icon.src = "../assets/images/icons/" + iconName + ".png";
                 icon.alt = name + " icon";
                 icon.classList.add('amenity-icon');
 
-                // Add text
                 const textNode = document.createTextNode(name);
 
-                // Append icon and text to list item
                 listItem.appendChild(icon);
                 listItem.appendChild(textNode);
 
@@ -108,6 +140,49 @@ function showAmenities(elementId, filePath){
                 amenitiesList.appendChild(listItem);
             }
         });
+
+        amenitiesList.dataset.expanded = "false";
     })
-    .catch(error => console.error('Error loading amenities:', error));
+    .catch(error => console.error('error loading amenities:', error));
+}
+
+function loadReviews(elementId, filePath){
+    console.log('fetching reviews from: ${filePath}');
+
+    fetch(filePath)
+    .then(response => {
+        if(!response.ok) throw new Error('Network response not ok');
+        return response.json();
+    })
+    .then(reviews => {
+        const reviewsList = document.getElementById(elementId);
+
+        reviews.forEach(review => {
+            const listItem = document.createElement('li');
+
+            // Add review text
+            const reviewText = document.createElement('p');
+            reviewText.classList.add('review-text');
+            reviewText.textContent = review.text;
+
+            // Add author name
+            const reviewAuthor = document.createElement('p');
+            reviewAuthor.classList.add('review-author');
+            reviewAuthor.textContent = ' - ' + review.author;
+
+            // Add link to the property page
+            const reviewLink = document.createElement('a');
+            reviewLink.classList.add('review-link');
+            reviewLink.href = review.link;
+            reviewLink.target = '_blank';
+            reviewLink.textContent = 'Read more';
+
+            listItem.appendChild(reviewText);
+            listItem.appendChild(reviewAuthor);
+            listItem.appendChild(reviewLink);
+
+            reviewsList.appendChild(listItem);
+        });
+    })
+    .catch(error => console.error('Error loading reviews:', error));
 }

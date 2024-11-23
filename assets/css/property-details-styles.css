@@ -62,14 +62,21 @@ header .logo {
 .content-container {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px;
     margin-top: 20px;
+}
+
+.left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 /* amenities section */
 .amenities-section {
     flex: 1;
-    max-width: 40%;
+    max-width: 100%;
     padding: 20px;
     background-color: #f1faee;
     border-radius: 10px;
@@ -114,9 +121,97 @@ header .logo {
     filter: grayscale(0%);
 }
 
+.view-all-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #7da8a5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-all-btn:hover {
+    background-color: #5c8b82;
+    transform: scale(1.05);
+}
+
+/* reviews section styling */
+.reviews-section {
+    padding: 30px;
+    background-color: #f1faee;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.reviews-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    color: #2b2d42;
+    font-weight: bold;
+    text-align: center;
+}
+
+.reviews-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reviews-list li {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reviews-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.reviews-list li .review-text {
+    margin-top: 5px;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.reviews-list li .review-author {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.review-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #7da8a5;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.review-link:hover{
+    color: #5c8b82;
+    text-decoration: none;
+    border-bottom-color: #5c8b82;
+}
+
 /* sliders section styling */
 .sliders-section {
-    flex: 2;
+    flex: 1;
     max-width: 60%;
     padding: 20px;
     background-color: #ffffff;
@@ -205,6 +300,14 @@ header .logo {
 
     .amenities-section, .sliders-section{
         max-width: 100%;
+    }
+
+    .reviews-list li {
+        padding: 15px;
+    }
+
+    .reviews-section h3 {
+        font-size: 1.4rem;
     }
 }
 
